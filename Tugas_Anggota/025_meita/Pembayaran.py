@@ -11,7 +11,7 @@ class Pembayaran(ABC):
 
     # Method
     @abstractmethod
-    def proses_bayar(self, nominal):
+    def proses_bayar(self, total, nominal=None):
         pass
 
     def info(self):
@@ -26,7 +26,7 @@ class PembayaranTunai(Pembayaran):
         self.__uang_diterima = None
 
     # Method
-    def proses_bayar(self, nominal):
+    def proses_bayar(self, total, nominal=None):
         pass
 
     def hitung_kembalian(self):
@@ -45,7 +45,7 @@ class PembayaranQRIS(Pembayaran):
         self.__provider = None
 
     # Method
-    def proses_bayar(self, nominal):
+    def proses_bayar(self, total, nominal=None):
         pass
 
     def info(self):
@@ -61,7 +61,7 @@ class PembayaranDebit(Pembayaran):
         self.__bank = None
 
     # Method
-    def proses_bayar(self, nominal):
+    def proses_bayar(self, total, nominal=None):
         pass
 
     def info(self):
